@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 615501dbe4f3fe94fbf4b564abb10237, type: 3}
+  m_Name: ModConfig
+  m_EditorClassIdentifier: 
+  id: Omission
+  title: OMISSION
+  author: ferd & ItsShaun
+  description: "IT\u2019S BASIC ARITHMETIC\u2026 HOW HARD COULD IT BE? =) (8 :[\r\n\r\n[Familiar
+    Faces #20] OMISSION\nDeveloped by ferd\r\nManual by ItzShaun\r\nModel from Emoji
+    Math by Mock Army\r\n\r\nModule ID: Omission"
+  version: 1.0
+  outputFolder: build
+  previewImage: {fileID: 2800000, guid: 1f6f952196d42a749843171b64dec456, type: 3}
