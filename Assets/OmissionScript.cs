@@ -143,6 +143,8 @@ public class OmissionScript : MonoBehaviour
     {
         return delegate ()
         {
+            Buttons[i].AddInteractionPunch(0.5f);
+            Audio.PlayGameSoundAtTransform(KMSoundOverride.SoundEffect.ButtonPress, Buttons[i].transform);
             if (_buttonAnimation[i] != null)
                 StopCoroutine(_buttonAnimation[i]);
             _buttonAnimation[i] = StartCoroutine(ButtonAnimation(i, true));
@@ -168,7 +170,7 @@ public class OmissionScript : MonoBehaviour
                         while (_stageInfo.Count != _currentStage + 1)
                         {
                             _stageInfo.Add(GenerateStage(_stageInfo.Count));
-                            Debug.LogFormat("[OMISSION #{0}] Stage {1}: {2}{3}{4}", _moduleId, _stageInfo.Count, _stageInfo[_stageInfo.Count - 1].DigitA, _stageInfo[_stageInfo.Count - 1].DigitB, _stageInfo[_stageInfo.Count - 1].Operator == null ? "" : _stageInfo[_stageInfo.Count - 1].Operator.Value ? "+" : "-");
+                            Debug.LogFormat("[OMISSION #{0}] Stage {1}: {2}{3}{4} shown as {5}", _moduleId, _stageInfo.Count, _stageInfo[_stageInfo.Count - 1].DigitA, _stageInfo[_stageInfo.Count - 1].DigitB, _stageInfo[_stageInfo.Count - 1].Operator == null ? "" : _stageInfo[_stageInfo.Count - 1].Operator.Value ? "+" : "-", _stageInfo[_stageInfo.Count - 1].Display);
                         }
                         _canShowCycle = true;
                         ScreenText.text = _stageInfo[_cycleIx].Display;
@@ -385,7 +387,7 @@ public class OmissionScript : MonoBehaviour
             _stageInfo.Add(GenerateStage(_currentStage));
             if (_canShowCycle)
                 ScreenText.text = _stageInfo[_currentStage].Display;
-            Debug.LogFormat("[OMISSION #{0}] Stage {1}: {2}{3}{4}", _moduleId, _currentStage + 1, _stageInfo[_currentStage].DigitA, _stageInfo[_currentStage].DigitB, _stageInfo[_currentStage].Operator == null ? "" : _stageInfo[_currentStage].Operator.Value ? "+" : "-");
+            Debug.LogFormat("[OMISSION #{0}] Stage {1}: {2}{3}{4} shown as {5}", _moduleId, _currentStage + 1, _stageInfo[_currentStage].DigitA, _stageInfo[_currentStage].DigitB, _stageInfo[_currentStage].Operator == null ? "" : _stageInfo[_currentStage].Operator.Value ? "+" : "-", _stageInfo[_currentStage].Display);
         }
         else
         {
